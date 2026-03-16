@@ -2,8 +2,6 @@
 
 A sleek, responsive weather application built with Vanilla JavaScript that fetches real-time data from the OpenWeatherMap API.
 
-## 🚀 Live Demo
-**[Check out the live app here!](https://ankitsingh-4254.github.io/Simple-Weather-App/)** *(Note: Ensure you have enabled GitHub Pages in Settings > Pages)*
 
 ## ✨ Features
 * **Real-Time Weather:** Get live temperature, humidity, and wind speed for any city.

@@ -9,9 +9,9 @@ async function checkWeather(city) {
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
 
     if (response.status == 404) {
-        alert("City not found");
-        return;
-    }
+    document.querySelector(".error").style.display = "block";
+    document.querySelector(".weather").style.display = "none";
+}
 
     const data = await response.json();
 
@@ -20,6 +20,8 @@ async function checkWeather(city) {
     document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
     document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+    document.querySelector(".weather").style.display = "block";
+    document.querySelector(".error").style.display = "none";
 
     // 2. Shortened Icon Logic (Object Mapping)
     const iconMap = {
@@ -48,6 +50,7 @@ searchBox.addEventListener("keypress", (e) => {
         checkWeather(searchBox.value);
     }
 });
+
 
 // Initial load
 checkWeather("Bengaluru");
